@@ -72,6 +72,7 @@ end
 end
 
 def full?(board)
+<<<<<<< HEAD
   
 
   
@@ -80,10 +81,23 @@ def full?(board)
 #       return false
 #     end
 #  end
+=======
+  binding.pry
+  if draw?(board)
+    return true
+  end
+  
+  board.any? do |space|
+    if space == " " or space == "" or space == nil or space == false
+      return false
+    end
+  end
+>>>>>>> 1429ec48cd78d1d36681645bb9b8c3ef225b81f6
     
  
   
   board.all? do |space|
+<<<<<<< HEAD
     space == "X" or space == "O"
 
   end
@@ -91,6 +105,13 @@ def full?(board)
   # if draw?(board)
   #   return true
   # end
+=======
+    if space == "X" or space == "O"
+      return true
+    end
+  end
+
+>>>>>>> 1429ec48cd78d1d36681645bb9b8c3ef225b81f6
 
 end
 
@@ -109,9 +130,18 @@ def draw?(board)
 end
   
 def over?(board)
+<<<<<<< HEAD
   
   full?(board) || won?(board)
     
+=======
+  binding.pry
+  if full?(board) || draw?(board) || won?(board)
+    return true
+  elsif full?(board) == false && draw?(board) == false && won?(board) == false
+    return false
+  end
+>>>>>>> 1429ec48cd78d1d36681645bb9b8c3ef225b81f6
 end
 
 def winner(board)
